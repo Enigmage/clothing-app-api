@@ -7,7 +7,7 @@ const app = express() ,
 // Multer library for handling file uploads with multipart/form-data encoding
 const multer = require('multer')
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT;
 
 app.use(express.static('public'))
 

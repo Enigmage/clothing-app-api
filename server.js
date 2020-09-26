@@ -1,14 +1,17 @@
-const express = require('express');
+//dotenv for configuring environment variables
+require('dotenv').config()
+
+const express = require('express')
 const app = express()
 // Multer library for handling file uploads with multipart/form-data encoding
-const multer = require('multer');
+const multer = require('multer')
 
-const PORT = 8000;
+const PORT = process.env.PORT
 
 // Path to where files will be saved
-const upload = multer({dest: __dirname+'/uploads/images'});
+const upload = multer({dest: __dirname+'/uploads/images'})
 
-app.use(express.static('public'));
+app.use(express.static('public'))
 
 app.get('/', function(req,res) {
     res.sendFile(__dirname + "/public/templates/index.html")
@@ -16,7 +19,7 @@ app.get('/', function(req,res) {
 
 app.get('/hello', function(req, res) {
     app.set('json spaces', 30)
-    res.json({message:"Hello World"});
+    res.json({message:"Hello World"})
 })
 
 // upload.array() for multiple files

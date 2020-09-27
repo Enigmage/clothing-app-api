@@ -1,6 +1,6 @@
 const express = require('express') ,
       multer = require('multer') ,
-      path = require('path')
+      path = require('path'),
       baseController = require('../controllers/baseController') , 
       uploadController = require('../controllers/uploadController')
 

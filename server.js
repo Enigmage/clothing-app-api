@@ -4,10 +4,8 @@ require('dotenv').config()
 const express = require('express')
 const app = express() , 
       apiRoutes = require('./routes/apiRoutes')
-// Multer library for handling file uploads with multipart/form-data encoding
-const multer = require('multer')
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8000;
 
 app.use(express.static('public'))
 

@@ -1,10 +1,22 @@
 const express = require('express') ,
       multer = require('multer') ,
+      path = require('path')
       baseController = require('../controllers/baseController') , 
       uploadController = require('../controllers/uploadController')
 
 // Path to where files will be saved
-const upload = multer({dest: __dirname+'/../uploads/images'})
+// store files with their original names
+const storage = multer.diskStorage({
+      destination: function (req, file, cb) {
+            cb(null, path.join(__dirname, '../uploads/images'))
+      },
+      filename: function(req, file, cb) {
+            cb(null, file.originalname )
+      }
+})
+
+
+const upload = multer({storage: storage})
 
 const router = express.Router() 
 

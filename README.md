@@ -9,7 +9,8 @@
 #### Using setup script
 
 - If the script doesn't have executable permission run `$ chmod +x setup` from inside the project directory.
-- Then run `$ ./setup` ( python3-venv package should be installed to run this !! )
+- Make sure python3-venv is installed in the working directory. If not, then install it by entering `sudo apt install python3-venv`
+- Then run `$ ./setup`
 - Run `$ source env/bin/activate` to get activate virutalenv. You're ready to go.
 
 #### Manually
